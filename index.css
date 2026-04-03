@@ -7,8 +7,6 @@
 }
 
 :root {
-  /* -----COLORS-----*/
-
   --color-primary-red-400: hsl(0, 100%, 67%);
   --color-primary-red-50: hsl(0, 100%, 98%);
   --color-primary-yellow-400: hsl(39, 100%, 56%);
@@ -45,6 +43,7 @@ body {
 }
 
 .card__header {
+  flex: 1;
   background: linear-gradient(
     var(--gradient-light-slate-blue-bg),
     var(--gradient-light-royal-blue-bg)
@@ -115,6 +114,7 @@ body {
 }
 
 .card__main {
+  flex: 1;
   padding: 1.5rem 1.875rem;
 }
 
@@ -192,4 +192,110 @@ body {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.3;
+}
+
+/* -------------TABLET-------------- */
+
+@media screen and (min-width: 768px) {
+  body {
+    align-items: center;
+  }
+
+  .card {
+    max-width: 42.875rem;
+    flex-direction: row;
+    box-shadow: 0 30px 60px 0 rgba(61, 108, 236, 15%);
+    border-radius: 32px;
+  }
+
+  .card__header {
+    border-radius: 32px;
+    padding: 2.813rem 4.313rem;
+    box-shadow: none;
+    flex: 0 0 49.271137%;
+  }
+
+  .card__heading {
+    font-size: 1.5rem;
+  }
+
+  .card__result-container {
+    width: 12.5rem;
+    height: 12.5rem;
+  }
+
+  .card__result {
+    font-size: 1.125rem;
+  }
+
+  .card__result-average {
+    font-size: 4.5rem;
+  }
+
+  .card__result-text {
+    color: var(--color-neutral-white);
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  .card__result-description {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+  }
+
+  .card__main {
+    padding: 2.781rem 2.478rem;
+    flex: 0 0 50.728863%;
+  }
+
+  .card__summary-title {
+    font-size: 1.5rem;
+  }
+
+  .card__summary {
+    margin-top: 2rem;
+  }
+
+  .card__data {
+    margin-top: 1rem;
+    padding: 1.031rem 1.054rem;
+  }
+
+  .card__data-category {
+    font-size: 1.125rem;
+  }
+
+  .card__data-category-text {
+    font-weight: 500;
+  }
+
+  .card__footer-btn {
+    margin-top: 2rem;
+  }
+}
+
+/* ------------DESKTOP----------- */
+
+@media screen and (min-width: 1023px) {
+  .card {
+    max-width: 46rem;
+  }
+
+  .card__header {
+    padding: 2.813rem 3.375rem;
+    flex: 0 0 50%;
+  }
+
+  .card__main {
+    padding: 2.781rem 2.5rem;
+    flex: 0 0 50%;
+  }
+
+  .card__data {
+    padding: 1.031rem 1.188rem;
+  }
+
+  .card__data-category {
+    font-size: 1.125rem;
+  }
 }
