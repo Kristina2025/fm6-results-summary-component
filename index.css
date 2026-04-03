@@ -168,7 +168,7 @@ body {
 }
 
 .card__data-category-text {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .card__data-numbers {
@@ -192,6 +192,16 @@ body {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card__footer-btn:hover,
+.card__footer-btn:focus-visible {
+  background: linear-gradient(
+    var(--gradient-light-slate-blue-bg),
+    var(--gradient-light-royal-blue-bg)
+  );
 }
 
 /* -------------TABLET-------------- */
@@ -263,10 +273,6 @@ body {
 
   .card__data-category {
     font-size: 1.125rem;
-  }
-
-  .card__data-category-text {
-    font-weight: 500;
   }
 
   .card__footer-btn {
