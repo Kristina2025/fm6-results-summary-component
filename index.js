@@ -27,7 +27,7 @@ function renderResults(resultsData) {
     totalScore += score;
     resultsDataHTML += `<li class="card__data">
         <div class="card__data-category">
-            <img src="${icon}" class="card__data-category-img">
+            <img alt="" src="${icon}" class="card__data-category-img">
             <p class="card__data-category-text">${category}</p>
         </div>
         <p class="card__data-numbers"><span class="card__data-score">${score} </span><span class="card__data-score-base"> / 100</span></p>

@@ -113,7 +113,7 @@ body {
   text-align: center;
 }
 
-.card__main {
+.card__content {
   flex: 1;
   padding: 1.5rem 1.875rem;
 }
@@ -253,7 +253,7 @@ body {
     margin-top: 1rem;
   }
 
-  .card__main {
+  .card__content {
     padding: 2.781rem 2.478rem;
     flex: 0 0 50.728863%;
   }
@@ -292,7 +292,7 @@ body {
     flex: 0 0 50%;
   }
 
-  .card__main {
+  .card__content {
     padding: 2.781rem 2.5rem;
     flex: 0 0 50%;
   }
