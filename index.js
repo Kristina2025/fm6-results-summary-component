@@ -1,5 +1,5 @@
-let cardSummary = document.querySelector(".card__summary");
-let averageResult = document.querySelector(".card__result-average");
+const cardSummary = expect(".card__summary");
+const averageResult = expect(".card__result-average");
 
 async function getResultsData() {
   try {
@@ -18,12 +18,15 @@ async function getResultsData() {
 getResultsData();
 
 function renderResults(resultsData) {
+  if (resultsData.length === 0) {
+    cardSummary.innerHTML = `<li class="error__no-results-data">No data available.</li>`;
+    averageResult.innerText = "N/A";
+    return;
+  }
   let resultsDataHTML = ``;
   let totalScore = 0;
   for (let i = 0; i < resultsData.length; i++) {
-    let category = resultsData[i].category;
-    let icon = resultsData[i].icon;
-    let score = resultsData[i].score;
+    let { category, icon, score } = resultsData[i];
     totalScore += score;
     resultsDataHTML += `<li class="card__data">
         <div class="card__data-category">
@@ -33,7 +36,12 @@ function renderResults(resultsData) {
         <p class="card__data-numbers"><span class="card__data-score">${score} </span><span class="card__data-score-base"> / 100</span></p>
     </li>`;
   }
-  let averageScore = Math.trunc(totalScore / resultsData.length);
-  averageResult.innerText = averageScore;
   cardSummary.innerHTML = resultsDataHTML;
+  averageResult.innerText = Math.trunc(totalScore / resultsData.length);
+}
+
+function expect(selector) {
+  const el = document.querySelector(selector);
+  if (!el) throw new Error(`Expected element "${selector}" not found.`);
+  return el;
 }
